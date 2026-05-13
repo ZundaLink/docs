@@ -1,0 +1,14 @@
+{
+  "license": "CC-BY-NC-SA-4.0",
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.17"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  }
+}
