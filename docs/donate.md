@@ -10,7 +10,7 @@ title: 捐赠支持
 
 我们接受以下加密货币捐赠，点击地址即可复制：
 
-### Bitcoin (BTC) <Badge type="tip" text="推荐" />
+### Bitcoin (BTC)
 
 ::: details 点击展开 BTC 地址
 
