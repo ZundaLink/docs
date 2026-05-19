@@ -42,9 +42,43 @@
 
 ### OpenWRT 配置
 
+#### 通过 Terminal 配置
+
+确保您拥有使用 Terminal 或 SSH 的能力，并**懂得一部分Linux命令行基础知识**。
+
+在您的 Terminal 中输入下面的命令行：
+
+``` bash
+cat << EOF > /etc/dnsmasq.hosts
+81.70.119.xxx at.sys-xxx.cn # 隐去了部分信息
+81.71.193.xxx ai.sys-xxx.cn # 隐去了部分信息
+EOF
+
+uci add_list dhcp.@dnsmasq[0].addnhosts='/etc/dnsmasq.hosts'
+
+uci commit dhcp
+/etc/init.d/dnsmasq restart
+```
+
+随后，请连接到您的 OpenWRT 路由进行一小段测试：
+
+``` bash
+nslookup at.sys-xxx.cn
+```
+
+测试并查看是否正确显示您配置的IP地址。
+
 #### 通过 Web 界面配置
 
-> TODO: WIP
+首先，请登录到您的 OpenWRT 后台（一般多为 http://192.168.1.1 ）:
+
+输入您的账号密码（账户通常为默认的 root，密码通常为 root、passwd、password、12345678 等）并完成登录。
+
+在菜单中依次找到【网络】 -> 【DHCP/DNS】 -> 【DNS记录】 ->【主机名映射】。
+
+在【主机名映射】下方点击【添加】，主机名填写来自 ZundaLink 提供的域名，并对应该域名在下方的 IP 地址处填写对应的 IP 地址。
+
+点击【保存并应用】后，等待配置刷新完成后使用连接到该 OpenWRT 的设备访问 ZundaLink 提供的域名以测试其连通性。
 
 ## 下一步
 
