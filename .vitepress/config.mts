@@ -23,6 +23,7 @@ export default defineConfig({
       { text: '安装', link: '/install/' },
       { text: '使用', link: '/guide/' },
       { text: 'API 文档', link: '/api/' },
+      { text: '捐赠', link: '/donate' },
     ],
 
     sidebar: {
